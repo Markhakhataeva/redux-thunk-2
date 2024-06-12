@@ -1,12 +1,12 @@
- export const AddTodos = () => {
+ export const AddAlbums = () => {
     return (dispatch) =>{
-        dispatch({type:"addTodo/start"})
-        fetch("https://jsonplaceholder.typicode.com/users")
+        dispatch({type:"load/albums/start"})
+        fetch("https://jsonplaceholder.typicode.com/albums")
             .then(res => res.json())
             .then((json) =>
                 {
                     dispatch({
-                        type:"addTodo/complete",
+                        type:"load/albums/fulfilled",
                         payload:json
                     })
                 }
@@ -15,34 +15,33 @@
     }
  }
 
- export const deleteUser=(id)=>{
-    return (dispatch) =>{
-        dispatch({type:"deleteTodo/start",payload:id})
-        fetch(`https://jsonplaceholder.typicode.com/users/${id}`,
-            {method:"Delete"} )
-            .then(res => res.json())
-            .then(()=>{
-                dispatch({type:"deleteTodo/complete",payload:id})
-            })
-
- }
- }
-
-
- export const updateCheck = (id,completed) => {
-     return (dispatch)=>{
-         dispatch({type:"check/start",payload:id})
-
-         fetch(`https://jsonplaceholder.typicode.com/users/${id}`,{
-             method:"PATCH",
-             body:JSON.stringify({
-                 completed: !completed
-             })
-         })
+ export const AddPhotos = () => {
+     return (dispatch) =>{
+         dispatch({type:"load/photos/start"})
+         fetch("https://jsonplaceholder.typicode.com/photos")
              .then(res => res.json())
-             .then(()=>{
-                 dispatch({type:"check/complete",payload:id})
-             })
+             .then((json) =>
+                 {
+                     dispatch({
+                         type:"load/photos/fulfilled",
+                         payload:json
+                     })
+                 }
+             )
 
      }
  }
+
+export const selectId=(userId)=>{
+    return {
+        type:"select/album/id",
+        payload:userId
+    }
+}
+
+export const setFiltered=(text)=>{
+    return{
+        type:"filtered/setFiltered",
+        payload:text
+    }
+}
