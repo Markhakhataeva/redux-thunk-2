@@ -1,4 +1,4 @@
- export const AddAlbums = () => {
+ export const GetAlbums = () => {
     return (dispatch) =>{
         dispatch({type:"load/albums/start"})
         fetch("https://jsonplaceholder.typicode.com/albums")
@@ -15,7 +15,7 @@
     }
  }
 
- export const AddPhotos = () => {
+ export const GetAlbumPhotos = () => {
      return (dispatch) =>{
          dispatch({type:"load/photos/start"})
          fetch("https://jsonplaceholder.typicode.com/photos")
@@ -43,5 +43,6 @@ export const setFiltered=(text)=>{
     return{
         type:"filtered/setFiltered",
         payload:text
+
     }
 }

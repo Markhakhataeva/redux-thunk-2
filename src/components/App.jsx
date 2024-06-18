@@ -1,17 +1,18 @@
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {AddAlbums, AddPhotos} from "../action";
 import {Albums} from "./Albums";
 import {Photos} from "./Photos";
+import {GetAlbumPhotos, GetAlbums} from "../action";
+
 
 export const App = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(AddAlbums())
+        dispatch(GetAlbums())
     })
 
     useEffect(()=>{
-        dispatch(AddPhotos())
+        dispatch(GetAlbumPhotos())
     })
   return (
       <div className="App">

@@ -9,11 +9,13 @@
     height: max-content;
 }
 
-.albums>ol>li:hover{
+
+.selected,.color:hover {
     background-color: lightgray;
     border-radius: 3px;
-
 }
+
+
 .photos{
     margin-left: 100px;
     width: 642px;

@@ -6,32 +6,31 @@ import {setFiltered} from "../action";
 
 
 export const Photos = () => {
-    const photos=useSelector((state)=>state.photos)
-    const selectedAlbum=useSelector((state)=>state.selectAlbumId)
-    const filter=useSelector((state)=>state.filter)
+    const dispatch= useDispatch();
+    const photos = useSelector((state) => state.photos.photos)
+    const selectedAlbum = useSelector((state) => state.albums.selectAlbumId)
+    const filter= useSelector((state)=>state.photos.filter)
+
     const filtered=photos
-        .filter(photo=>photo.albumId===selectedAlbum)
-        .filter(photo=>photo.title.indexOf(filter) > -1)
-
-
-    const dispatch=useDispatch();
+        .filter(photo=>photo.albumId === selectedAlbum)
+        .filter(x => x.title.indexOf(filter) > -1)
 
     if (selectedAlbum=== null){
         return (
             <div className="load">--Выберите пользователя</div>
         )
     }
-    const handleChange=(event)=>{
-        dispatch(setFiltered(event.target.value));
+    const handleChange = (e)=> {
+        dispatch(setFiltered(e.target.value));
     }
     return (
         <div className="photos">
             <div className="filter">
-                <input type="text" placeholder="Поиск по тексту..." value={filter} onChange={handleChange}/>
+                <input type="text" placeholder="Поиск по тексту..." value={filter} onChange={(e)=>handleChange(e)}/>
             </div>
             <ul>
                 {
-                    filtered.map((photo)=>{
+                    filtered.map((photo) => {
                         return <Photo photo={photo} key={photo.id} />
                     })
                 }
