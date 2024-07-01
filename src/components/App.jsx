@@ -4,7 +4,7 @@ import {Albums} from "./Albums";
 import {Photos} from "./Photos";
 import {GetAlbumPhotos, GetAlbums} from "../action";
 import {Route, Routes} from "react-router-dom";
-
+import styles from  "./App.module.css"
 
 export const App = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const App = () => {
         dispatch(GetAlbumPhotos())
     })
   return (
-      <div className="App">
+      <div className={styles.app}>
           <Albums/>
          <Routes>
              <Route path="/:id" element={ <Photos/>} />

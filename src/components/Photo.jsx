@@ -1,11 +1,11 @@
 import React from "react";
-
+import styles from "./Photo.module.css";
 export const Photo = ({photo}) => {
     return (
-        <li>
+        <li className={styles.li}>
             <div>
                <img src={photo.url} alt={""}/>
-                <div className="title"> {photo.title}</div>
+                <div className={styles.title}> {photo.title}</div>
             </div>
         </li>
     );

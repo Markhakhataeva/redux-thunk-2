@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Photo} from "./Photo";
 import {setFiltered} from "../action";
 import {useParams} from "react-router-dom";
+import styles from "./Photos.module.css";
 
 
 
@@ -26,8 +27,8 @@ export const Photos = () => {
         dispatch(setFiltered(e.target.value));
     }
     return (
-        <div className="photos">
-            <div className="filter">
+        <div className={styles.photos}>
+            <div className={styles.filter}>
                 <input type="text" placeholder="Поиск по тексту..." value={filter} onChange={(e)=>handleChange(e)}/>
             </div>
             <ul>
