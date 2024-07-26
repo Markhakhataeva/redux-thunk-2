@@ -1,4 +1,6 @@
-const initialState={
+import {ActionTypes, initialStatePhotos, TodoActions} from "../../types/types";
+
+const initialState:initialStatePhotos={
     photos:[],
     filter:"",
     loadingPhotos: false
@@ -8,16 +10,16 @@ const initialState={
 
 
 
-export const  photos = (state=initialState, action) =>{
+export const  photos = (state=initialState, action:TodoActions) =>{
     switch(action.type){
-        case "load/photos/start":
+        case ActionTypes.FETCH_PHOTOS:
             return {
                 ...state,
                 loadingPhotos:true
 
             }
 
-        case "load/photos/fulfilled":
+        case ActionTypes.FETCH_PHOTOS_SUCCESS:
             return{
                 ...state,
                 loadingPhotos:false,
@@ -25,7 +27,7 @@ export const  photos = (state=initialState, action) =>{
 
             }
 
-        case "filtered/setFiltered":
+        case ActionTypes.FETCH_FILTER:
             return {
                 ...state,
                 filter:action.payload

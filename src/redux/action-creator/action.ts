@@ -1,12 +1,15 @@
- export const GetAlbums = () => {
-    return (dispatch) =>{
-        dispatch({type:"load/albums/start"})
+import {Dispatch} from "react";
+import {ActionTypes, TodoActions} from "../../types/types";
+
+export const GetAlbums = () => {
+    return (dispatch:Dispatch<TodoActions>) =>{
+        dispatch({type:ActionTypes.FETCH_ALBUMS})
         fetch("https://jsonplaceholder.typicode.com/albums")
             .then(res => res.json())
             .then((json) =>
                 {
                     dispatch({
-                        type:"load/albums/fulfilled",
+                        type:ActionTypes.FETCH_ALBUMS_SUCCESS,
                         payload:json
                     })
                 }
@@ -16,14 +19,14 @@
  }
 
  export const GetAlbumPhotos = () => {
-     return (dispatch) =>{
-         dispatch({type:"load/photos/start"})
+     return (dispatch:Dispatch<TodoActions>) =>{
+         dispatch({type:ActionTypes.FETCH_PHOTOS})
          fetch("https://jsonplaceholder.typicode.com/photos")
              .then(res => res.json())
              .then((json) =>
                  {
                      dispatch({
-                         type:"load/photos/fulfilled",
+                         type:ActionTypes.FETCH_PHOTOS_SUCCESS,
                          payload:json
                      })
                  }
@@ -32,16 +35,16 @@
      }
  }
 
-export const selectId=(userId)=>{
+export const selectId=(userId:number)=>{
     return {
-        type:"select/album/id",
+        type:ActionTypes.FETCH_SELECT,
         payload:userId
     }
 }
 
-export const setFiltered=(text)=>{
+export const setFiltered=(text:string)=>{
     return{
-        type:"filtered/setFiltered",
+        type:ActionTypes.FETCH_FILTER,
         payload:text
 
     }

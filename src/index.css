@@ -1,2 +1,45 @@
 
+.App{
+    display: flex;
+}
+.albums{
+    width: 450px;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: -1px 10px 20px  grey;
+    height: max-content;
+}
 
+.selected,.color:hover {
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+
+.photos{
+    margin-left: 100px;
+    width: 642px;
+    font-size: 20px;
+    height: max-content;
+}
+
+.filter>input{
+    width: 580px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 40px;
+    padding: 10px;
+    border: 1px solid grey;
+
+
+}
+.li{
+    list-style: none;
+}
+
+.titleForPhoto{
+    border: 1px solid grey;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
