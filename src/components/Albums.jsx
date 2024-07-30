@@ -6,7 +6,6 @@ import styles from "./Albums.module.css"
 export const Albums = (props) => {
     const albums = useSelector((state) => state.albums.albums)
 
-    console.log(albums)
     return (
         <div className={styles.albums}>
             <ol>
