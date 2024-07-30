@@ -1,6 +1,6 @@
-import {ActionTypes, initialStateAlbuns, TodoActions} from "../../types/types";
+import {ActionTypes, initialStateAlbums, TodoActions} from "../../types/types";
 
-const initialState:initialStateAlbuns = {
+const initialState:initialStateAlbums = {
     albums:[],
     selectAlbumId:null,
     loadingAlb:false

@@ -1,5 +1,5 @@
 
-export interface initialStateAlbuns {
+export interface initialStateAlbums {
     albums:any[],
     selectAlbumId:null,
     loadingAlb:boolean
