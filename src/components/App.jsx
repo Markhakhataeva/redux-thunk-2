@@ -11,16 +11,16 @@ export const App = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(GetAlbums())
-    })
-
-    useEffect(()=>{
         dispatch(GetPhotos())
-    })
+    },[dispatch])
+
+
+    
   return (
       <div className={styles.app}>
           <Albums/>
          <Routes>
-             <Route path="/:id" element={ <Photos/>} />
+             <Route path="/:id?" element={<Photos/>} />
          </Routes>
 
       </div>

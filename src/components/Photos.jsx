@@ -14,7 +14,7 @@ export const Photos = () => {
     const filter= useSelector((state)=>state.photos.fillter)
 
     const filtered= photos
-        .filter(photo=>photo.albumId === id)
+        .filter(photo=> photo.albumId === id)
         .filter(x => x.title.indexOf(filter) > -1)
 
     if (isNaN(id)){
@@ -23,7 +23,6 @@ export const Photos = () => {
         )
     }
 
-
     return (
         <div className={styles.photos}>
             <div className={styles.filter}>
@@ -31,7 +30,7 @@ export const Photos = () => {
             </div>
             <ul>
                 {
-                    filtered.map((photo) => {
+                    filtered?.map((photo) => {
                         return <Photo photo={photo} key={photo.id} />
                     })
                 }
@@ -39,4 +38,3 @@ export const Photos = () => {
         </div>
     );
 }
-
