@@ -1,0 +1,9 @@
+@mixin font ($size,$fontW) {
+  font-size: $size;
+  width: $fontW;
+}
+@mixin margin($bottom:0,$left:0) {
+  margin-left:$left;
+  margin-bottom: $bottom;
+
+}

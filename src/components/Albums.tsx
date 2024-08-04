@@ -1,6 +1,7 @@
 import React from 'react';
 import {Album} from "./Album";
 import {useTypedSelector} from "../hooks/useTypedSelector";
+import styles from "../styles/albums.module.scss";
 
 interface AlbumsTypes{
     userId: number,
@@ -13,7 +14,7 @@ interface AlbumsTypes{
 export const Albums:React.FC = () => {
     const albums = useTypedSelector((state) => state.albums.albums)
     return (
-        <div className="albums">
+        <div className={styles.albums}>
             <ol>
                 {
                   albums.map((album:AlbumsTypes) => {

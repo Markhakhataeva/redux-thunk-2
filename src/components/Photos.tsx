@@ -3,6 +3,8 @@ import {Photo} from "./Photo";
 import {useParams} from "react-router-dom";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
+import styles from "../styles/photos.module.scss"
+
 
 interface photoType{
     albumId: number
@@ -37,8 +39,8 @@ export const Photos:FC = () => {
         (setFiltered(e.target.value));
     }
     return (
-        <div className="photos">
-            <div className="filter">
+        <div className={styles.photos}>
+            <div className={styles.filter}>
                 <input type="text" placeholder="Поиск по тексту..." value={filter} onChange={(e)=>handleChange(e)}/>
             </div>
             <ul>

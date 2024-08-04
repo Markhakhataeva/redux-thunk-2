@@ -4,6 +4,7 @@ import {albums} from "./Albums/albums";
 import {photos} from "./photos/photos";
 import {createLogger} from "redux-logger";
 
+
 const logger = createLogger({
     diff:true,
     collapsed:true

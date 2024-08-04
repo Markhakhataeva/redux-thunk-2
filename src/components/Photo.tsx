@@ -1,4 +1,6 @@
 import React, {FC} from "react";
+import styles from "../styles/photos.module.scss"
+
 
 interface photType{
     photo:{
@@ -14,10 +16,10 @@ export const Photo:FC<photType> = ({photo}:photType) => {
 
 
     return (
-        <li className="li">
+        <li className={styles.li}>
             <div>
                <img src={photo.url} alt={""}/>
-                <div className="titleForPhoto"> {photo.title}</div>
+                <div className={styles.titleForPhoto}> {photo.title}</div>
             </div>
         </li>
     );

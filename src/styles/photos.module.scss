@@ -1,0 +1,26 @@
+@import "mixin";
+
+.photos{
+  @include margin( 0,100px);
+  @include font(20px,642px);
+  height: max-content;
+}
+
+.filter>input{
+  @include font(18px,580px);
+  border-radius: 3px;
+  @include margin(0, 40px);
+  padding:10px;
+  border: 1px solid grey;
+}
+
+.li{
+  list-style: none;
+}
+
+.titleForPhoto{
+  border: 1px solid grey;
+  list-style: none;
+  text-align: center;
+  @include margin(20px, 0);
+}
