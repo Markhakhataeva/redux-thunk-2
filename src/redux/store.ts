@@ -6,6 +6,10 @@ import PhotoReducer from "./photos/PhotoSlice"
 export const store = configureStore({
     reducer: {
         albums:AlbumReducer,
-        photo:PhotoReducer
+        photos:PhotoReducer
     },
 })
+
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

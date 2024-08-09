@@ -1,12 +1,15 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import {PhotosProps} from "../../types/types";
 
-const initialState = {
+const initialState:PhotosProps = {
     photos:[],
     fillter:"",
     loadingPhotos: false
 }
 
-
+interface text{
+    text:string
+}
 
 export const GetPhotos = createAsyncThunk(
     "FETCH_PHOTOS",
@@ -18,7 +21,7 @@ export const GetPhotos = createAsyncThunk(
 
 export const setFiltered = createAsyncThunk(
     "FETCH_FILTER",
-    async ({text}) => {
+    async ({text}:text) => {
        return{
            text
        }
@@ -42,7 +45,7 @@ export const photosSlice = createSlice({
             state.photos = action.payload
         })
         .addCase(setFiltered.fulfilled, (state, action) => {
-            state.fulfilled = action.payload.text
+            state.fillter = action.payload.text
         })
     }
 })

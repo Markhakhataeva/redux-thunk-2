@@ -1,8 +1,8 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import {AlbumsProps} from "../../types/types";
 
-const initialState = {
+const initialState:AlbumsProps = {
     albums:[],
-    selectAlbumId:null,
     loadingAlb:false
 }
 
